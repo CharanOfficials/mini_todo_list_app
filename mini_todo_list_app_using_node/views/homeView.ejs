@@ -1,0 +1,34 @@
+<!-- Main page to show the list of Todo -->
+<main>
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <form action="/mark-completed" method="post"></form>
+    <ul>
+        <% for(let i of todo_list){%>
+            <% if(i.RecentlyDeleted === false){%>
+    <li>
+    <div class="todolist">
+        <div class="delete">
+            <input class="delselection" type="checkbox" id=<%=i._id%> name="selectedItem">
+        </div>
+        <div class="mastersection">
+        <div class="section1">
+            <p class="desc">Description:&nbsp;<%= i.Description %></p>
+        </div>
+        <div class="section2">
+            <p class="categ">Category:&nbsp;<%= i.Category %>&nbsp;</p>
+            <p class="duedate">Due Date:&nbsp;<%= i.DueDate %>&nbsp;</p>
+            <p class="duetime">Due Time:&nbsp;<%= i.DueTime %>&nbsp;</p>
+        </div>
+        </div>
+        <!-- <div class="edit">
+            <a href="/edit-todo"> <i id="editTodo" data-id=<%= i._id %> class="delete bi bi-pencil"></i></a>
+        </div> -->
+    </div>
+    </li>
+    <%} %>
+    <%} %>
+    </ul>
+    <button id="deletebtn">Delete</button> <!-- deleting using the JS on click -->
+    <script src="./js/home.js"></script>
+</main>

@@ -1,0 +1,48 @@
+<main>
+    <link rel="stylesheet" href="./css/editTodo.css">
+    <form action="/edit_todo" method="post" onsubmit="return formValidation()">
+    <div class="outer_container">
+        <label for="desc">Description:</label>
+        <textarea class="desc_text" name="descript" id="desc" cols="30" rows="3" placeholder="What do you need to do?" maxlength="100" required></textarea>
+        <div class="section-2">
+            <div class="categ">
+                <label for="categ">
+                    Category
+                </label>
+                <select class="dropdown custom_style" name="categ" id="category" required>
+                    <!-- <option value="default">Select</option> -->
+                    <option value="Personal Work" selected>Personal Work</option>
+                    <option value="School">School</option>
+                    <option value="Cleaning">Cleaning</option>
+                    <option value="Work">Work</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="due-time">
+                <label for="due-time">Due Time</label>
+                <div class="time_holder">
+                <input class="small_style" name="hrs" type="number" id="due-time-hrs" placeholder="HH"  required>
+                <input class="small_style" name="mins" type="number" id="due-time-mins" placeholder="MM"  required>
+                <select class="small_style" name="past" id="due-time-past" required>
+                    <option value="AM" selected>AM</option>
+                    <option value="PM">PM</option>
+                </select>
+            </div>
+            </div>
+            <div class="due-date">
+                <label for="due-date">Due Date</label>
+                <div>
+                <input class="small_style" name="dd" type="Number" id="due-date-date" placeholder="DD"  required>
+                <input class="small_style" name="mm" type="Number" id="due-date-month" placeholder="MM" required>
+                <input style="width: 5rem;" class="small_style" name="yyyy" type="Number" id="due-date-year" placeholder="YYYY" required>
+                </div>
+            </div>
+        </div>
+        <div class="section-3">
+            <button id="submit" class="sub_btn custom_style">Submit</button>
+        </div>
+    </div>
+</form>
+    <script src="./js/home.js"></script>
+    <script src="./js/edit_todo.js"></script>
+</main>

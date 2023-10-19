@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    background-color: #DDD8C4;
+    color: #297045;
+    box-sizing: border-box;
+}
+/* Styling header */
+header{
+    text-align: center;
+    margin: 1rem 0;
+    letter-spacing: 0.1rem;
+}
+/* Body basic styles to control home layout to center */
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+/* To control the elements in center */
+.home{
+    height: 85vh;
+    width: 90vw;
+    border-top: 2px solid #297045;
+    border-bottom: 2px solid #297045;
+}
+/* To avoid selecting the header and footers */
+.no-select {
+    user-select: none;
+}
+/* To build the header effect */
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid #297045;
+    white-space: nowrap;
+    letter-spacing: .15em;
+    animation: 
+      typing 5s ease-in-out infinite,
+      blink-caret .75s step-end infinite;
+}  
+/* The typing effect */
+@keyframes typing {
+    0% { width: 50%}
+    25% { width: 100% }
+    75% { width: 100%; }
+    100% { width: 50%;}
+}
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #297045; }
+}
+/* Menu styling */
+.menu{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    font-size: 2.5rem;
+    position: fixed;
+    bottom: 2rem;
+    right: 1.2rem;
+    height: 12rem;
+}
+.home{
+    font-size: 2.2rem;
+}
+.main-menu{
+    margin-top: 0.8rem;
+}
+/* Menu dock  */
+.menu-list{
+    width: 2.5rem;
+    height: 0;
+    overflow: hidden;
+    /* display: none; */
+}
+.menubtntodo{
+    width: 1rem;
+}
+/* menu list animation show*/
+.menu_list_animation_show {
+    animation: menu_list_show ease-in-out .4s ;
+}
+@keyframes menu_list_show {
+    from { height: 0%; }
+    to { height: 100%; }
+}
+/* menu list animation hide*/
+.menu_list_animation_hide {
+    animation: menu_list_hide ease-in-out .4s ;
+}
+@keyframes menu_list_hide {
+    from { height: 100%; }
+    to { height: 0%; }
+}
+
+/* menu animation show */
+.menu_show_animation {
+    animation: menu_rotate_show ease-in-out .4s;
+    animation-fill-mode: forwards;
+}
+@keyframes menu_rotate_show {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(180deg); }
+}
+
+/* menu animation hide */
+.menu_hide_animation {
+    animation: menu_rotate_hide ease-in-out .4s;
+    animation-iteration-count: 1;
+}
+@keyframes menu_rotate_hide {
+    from { transform: rotate(180deg); } 
+    to { transform: rotate(0deg); }
+}
